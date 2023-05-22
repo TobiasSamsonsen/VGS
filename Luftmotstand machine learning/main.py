@@ -45,14 +45,15 @@ y_test = tf.convert_to_tensor(y_test)
 
 # Build the model
 model = keras.Sequential([
-    layers.Dense(4, activation='relu', input_shape=[3]),
-    layers.Dense(16, activation='linear'),
-    layers.Dense(8, activation='relu')
+    layers.Dense(8, activation='linear', input_shape=[3]),
+    layers.Dense(32, activation='linear'),
+    layers.Dense(8, activation='linear'),
+    layers.Dense(4,activation='linear')
 ])
 model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(0.001), metrics=['mae'])
 
 # Train the model
-history = model.fit(X_train, y_train, epochs=100, batch_size=64, validation_split=0.2, verbose=0)
+history = model.fit(X_train, y_train, epochs=500, batch_size=32, validation_split=0.2, verbose=0)
 
 # Evaluate the model
 test_loss, test_mae = model.evaluate(X_test, y_test)
