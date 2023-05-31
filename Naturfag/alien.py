@@ -2,10 +2,10 @@ import random
 from matplotlib import pyplot as plt
 import numpy as np
 
-colonylist = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+colonylist = [0]
 dead = 0
 colonies = 100
-generations = 20
+generations = 100
 
 for i in range(1, colonies+1):
     genlist = [1]
@@ -31,6 +31,7 @@ for i in range(1, colonies+1):
                 counted += 3
                 uncounted -=1
                 
+                
         uncounted = counted
         counted = 0
         genlist.append(uncounted)
@@ -47,7 +48,7 @@ colonylist = [x/colonies for x in colonylist]
 print(colonylist)
 print(f"Dead colonies: {dead}")
 
-x = np.linspace(1,generations, generations)
+x = np.linspace(1, len(colonylist), len(colonylist))
 plt.plot(x, colonylist, label="Gjennomsnittlige aliens per koloni")
 plt.grid()
 plt.legend()
