@@ -11,5 +11,5 @@ for i in rekke:
         
 print("---------------------")
 print((1+(5**(1/2)))/2)
-    
+
 # Forholdet mellom an og an-1 nærmer seg det gylne snitt
