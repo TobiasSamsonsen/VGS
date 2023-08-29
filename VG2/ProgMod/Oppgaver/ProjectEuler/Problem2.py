@@ -2,6 +2,7 @@ sum = 0
 a1 = 1
 a2 = 1
 an = 2
+nums = []
 
 while an <= 4E6:
     if an % 2 == 0:
