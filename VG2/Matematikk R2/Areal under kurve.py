@@ -4,7 +4,7 @@ def f(x):
     return 3*(math.e**(-(x**2)/2))
 
 # Antall rektangler:
-num = 4
+num = 100
 
 # Venstremetoden
 x = -2
