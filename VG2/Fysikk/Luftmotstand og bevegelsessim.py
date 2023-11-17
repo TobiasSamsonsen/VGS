@@ -1,8 +1,8 @@
 from matplotlib import pyplot as plt
 
-m = 75
+m = 0.0096
 g = 9.81
-cd = 0.7
+# cd = 0.7
 
 s = 0
 v = 0
