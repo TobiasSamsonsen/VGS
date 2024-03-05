@@ -23,7 +23,7 @@ void calcThrottle() {
   }
 }
 
-void setup() {
+void setup() {  
   Serial.begin(9600);
   pinMode(THROTTLE_CHANNEL_PIN, INPUT);
    
@@ -35,6 +35,6 @@ void loop() {
   // Here you can use the throttleValue variable to control your device
   // For debugging purposes, print the throttle value to the serial monitor
   float actualThrottleValue = throttleValue / 100;
-  Serial.println(String(actualThrottleValue));
+  Serial.println(String(throttleValue));
   delay(100);
 }
