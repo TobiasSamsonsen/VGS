@@ -6,11 +6,11 @@ import math
 # Konstanter
 g = 9.81 # m/s^2
 v0 = 4.9125 # m/s
-angle = 0 * math.pi / 180 # radianer
+angle = -90 * math.pi / 180 # radianer
 y0 = 1.025 # m
 x0 = 0 # m
 t = 0 # s
-dt = 1e-2 # s
+dt = 1e-3 # s
 
 target = float(input("Target distance: ")) # m
 
@@ -19,28 +19,15 @@ x = x0
 y = y0
 x_values = [x]
 y_values = [y]
-while y >= 0:
-    x = x0 + v0 * math.cos(angle) * t
-    y = y0 + v0 * math.sin(angle) * t - 0.5 * g * t**2
-
-    x_values.append(x)
-    y_values.append(y)
-
-    t += dt
-    
-plt.plot(x_values, y_values)
-plt.xlabel("x (m)")
-plt.ylabel("y (m)")
-plt.title("Projectile motion")
-plt.show()
-
-
 
 # Calculate angle for target distance
 while True:
     while y >= 0:
         x = x0 + v0 * math.cos(angle) * t
         y = y0 + v0 * math.sin(angle) * t - 0.5 * g * t**2
+
+        x_values.append(x)
+        y_values.append(y)
 
         t += dt
     
@@ -52,7 +39,15 @@ while True:
         t = 0
         x = x0
         y = y0
+        x_values = [x]
+        y_values = [y]
 
+
+plt.plot(x_values, y_values)
+plt.xlabel("x (m)")
+plt.ylabel("y (m)")
+plt.title("Projectile motion")
+plt.show()
 
 print("--------------------")
 print(f"Angle: {angle * 180 / math.pi} degrees")
